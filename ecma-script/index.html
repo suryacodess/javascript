@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validations</title>
+
+    <style>
+        input {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="username">
+    <input type="number" id="number">
+    <input type="email" id="email">
+
+    <button id="btn">submit</button>
+
+    <div>
+        <h2></h2>
+        <h4></h4>
+        <h6></h6>
+    </div>
+    <script>
+        const btn = document.getElementById("btn");
+        const username = document.querySelector("#username")
+        const number = document.querySelector("#number")
+        const email = document.querySelector("#email")
+
+        let userName;
+        let mobileNum;
+        let Email;
+
+        username.addEventListener("keyup", () => {
+            let usernameVal = username.value;
+            if (usernameVal.length < 5 || usernameVal.length > 8) {
+                username.style.border = "1px solid red";
+            } else {
+                username.style.border = "1px solid black";
+                userName = usernameVal;
+            }
+        })
+
+        number.addEventListener("keyup", () => {
+            let numberVal = number.value;
+            if (numberVal.length !== 10) {
+                number.style.border = "1px solid red";
+            } else {
+                number.style.border = "1px solid black";
+                mobileNum = numberVal;
+            }
+        })
+
+        email.addEventListener("keyup", () => {
+            let emailVal = email.value;
+            if (emailVal.includes("@gmail.com") === false) {
+                email.style.border = "1px solid red";
+            } else if (emailVal.includes("@gmail.com") === true) {
+                email.style.border = "1px solid black";
+                Email = emailVal;
+            }
+        })
+
+
+        btn.addEventListener("click", () => {
+            document.querySelector("h2").innerText = userName
+            document.querySelector("h4").innerText = Email;
+            document.querySelector("h6").innerText = mobileNum;
+        })
+
+
+    </script>
+
+</body>
+
+</html>
