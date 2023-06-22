@@ -104,3 +104,10 @@ console.log("objects - ");
 // let v = map.values(); //returns value
 // console.log(k);
 // console.log(v);
+
+
+// const obj1 = {a:1, b:2};
+// const obj2 = {a:2, b:2, c:3};
+
+// const obj3 = {...obj1,...obj2}; // mergin two objects 
+// console.log(obj3);
